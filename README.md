@@ -84,6 +84,7 @@ Please check [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a Pull Request
 
 ## 📁 Repository Structure
 
+```text
 ROS-For-Beginners/
 │
 ├── README.md
@@ -187,7 +188,7 @@ ROS-For-Beginners/
     ├── 03-mapping/
     ├── 04-autonomous-navigation/
     └── 05-final-project/
-
+```
 ---
 
 ## 📜 License
