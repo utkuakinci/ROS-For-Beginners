@@ -14,9 +14,10 @@
 
 ## Content
 - [ ] Installation and environment setup lesson
-- [ ] `01-ros2-basics`: Nodes and Topics lessons
+- [x] `00-prerequisites` lessons
+- [x] `01-ros2-basics`: Nodes and Topics lessons
 - [ ] `projects/01-turtlesim`
-- [ ] Remaining `01-ros2-basics` lessons
+- [x] Remaining `01-ros2-basics` lessons
 - [ ] `02-ros2-cli`
 - [ ] `03-workspaces-and-packages`
 - [ ] `04-python`
