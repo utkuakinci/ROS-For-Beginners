@@ -1,1 +1,26 @@
-~
+# Editor backups and temporary files
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# ROS 2 / colcon workspace artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local AI assistant notes (not part of the repository)
+CLAUDE.md
