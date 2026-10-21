@@ -19,7 +19,7 @@
 - [ ] `projects/01-turtlesim`
 - [x] Remaining `01-ros2-basics` lessons
 - [x] `02-ros2-cli`
-- [ ] `03-workspaces-and-packages`
+- [x] `03-workspaces-and-packages`
 - [ ] `04-python`
 
 ## Code Infrastructure
