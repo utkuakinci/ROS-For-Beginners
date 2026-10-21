@@ -18,7 +18,7 @@
 - [x] `01-ros2-basics`: Nodes and Topics lessons
 - [ ] `projects/01-turtlesim`
 - [x] Remaining `01-ros2-basics` lessons
-- [ ] `02-ros2-cli`
+- [x] `02-ros2-cli`
 - [ ] `03-workspaces-and-packages`
 - [ ] `04-python`
 
