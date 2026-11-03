@@ -290,7 +290,7 @@ $ ros2 run my_first_pkg turtle_spawner
 
 ---
 
-## ⚠️ Avoiding Deadlocks
+## Avoiding Deadlocks
 
 This is the most important rule in this lesson:
 
