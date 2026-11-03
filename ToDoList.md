@@ -20,7 +20,7 @@
 - [x] Remaining `01-ros2-basics` lessons
 - [x] `02-ros2-cli`
 - [x] `03-workspaces-and-packages`
-- [ ] `04-python`
+- [x] `04-python`
 
 ## Code Infrastructure
 - [ ] `src/` directory for buildable example packages
