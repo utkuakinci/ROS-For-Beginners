@@ -22,6 +22,7 @@
 - [x] `03-workspaces-and-packages`
 - [x] `04-python`
 - [x] `05-cpp`
+- [x] `06-tf2`
 
 ## Code Infrastructure
 - [ ] `src/` directory for buildable example packages
