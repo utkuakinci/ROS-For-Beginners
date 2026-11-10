@@ -23,6 +23,7 @@
 - [x] `04-python`
 - [x] `05-cpp`
 - [x] `06-tf2`
+- [x] `07-robot-modeling`
 
 ## Code Infrastructure
 - [ ] `src/` directory for buildable example packages
