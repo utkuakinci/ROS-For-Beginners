@@ -24,6 +24,7 @@
 - [x] `05-cpp`
 - [x] `06-tf2`
 - [x] `07-robot-modeling`
+- [x] `08-simulation` (Jazzy + Gazebo Harmonic)
 
 ## Code Infrastructure
 - [ ] `src/` directory for buildable example packages
