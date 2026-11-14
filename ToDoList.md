@@ -10,7 +10,7 @@
 - [ ] Choose the target ROS 2 distribution (Jazzy only, or Humble + Jazzy)
 - [ ] Add an installation / environment setup module (native Ubuntu, WSL2, Docker)
 - [ ] Add missing topics: C++ prerequisites, `CMakeLists.txt` / `ament_cmake`, QoS
-- [ ] Reorder `09-navigation`: mapping before localization
+- [x] Reorder `09-navigation`: mapping before localization
 
 ## Content
 - [ ] Installation and environment setup lesson
