@@ -44,7 +44,7 @@ Learn how ROS 2 manages software builds:
 - Physics simulation using Gazebo, spawning custom robots, attaching sensors (LiDAR, Camera, IMU), and running simulation projects.
 
 ### 09. Navigation & SLAM
-- Robot localization, map building (SLAM), Nav2 stack configuration, and autonomous navigation.
+- Map building (SLAM), robot localization, Nav2 stack configuration, and autonomous navigation.
 
 ### 10. Manipulation
 - Introduction to robotic arms, kinematics, and trajectory planning with MoveIt 2.
@@ -164,8 +164,8 @@ ROS-For-Beginners/
 │
 ├── 09-navigation/
 │   ├── README.md
-│   ├── localization.md
 │   ├── mapping.md
+│   ├── localization.md
 │   ├── nav2.md
 │   └── autonomous-navigation.md
 │
