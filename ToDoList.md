@@ -26,6 +26,7 @@
 - [x] `07-robot-modeling`
 - [x] `08-simulation` (Jazzy + Gazebo Harmonic)
 - [x] `09-navigation`
+- [x] `10-manipulation`
 
 ## Code Infrastructure
 - [ ] `src/` directory for buildable example packages
