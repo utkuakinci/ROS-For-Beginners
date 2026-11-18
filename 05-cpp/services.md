@@ -10,6 +10,12 @@ This lesson implements the service examples from [Module 04](../04-python/servic
 - Calling services asynchronously from a running node
 - Avoiding deadlocks
 
+## In Simple Terms
+
+The same vending machine, built in C++. One difference: instead of handing the product back (`return response` in Python), the machine puts it in a **tray that's already prepared** (the `response` argument), and rclcpp delivers the tray.
+
+**Example:** `add_two_ints_server` writes `response->sum = a + b;` into the tray and is done.
+
 ---
 
 ## Setup

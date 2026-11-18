@@ -11,6 +11,12 @@ In this lesson you write the C++ versions of the two publishers from [Module 04]
 - Parameters in C++
 - Comparing rclcpp with rclpy
 
+## In Simple Terms
+
+This is the same radio DJ as in Python, written in **another language**. C++ wants more exact instructions (every type spelled out), and the recipe must be **baked** (compiled) before you can taste it. `CMakeLists.txt` is the oven's instructions: which source files to bake and where to put the result.
+
+**Example:** the C++ `talker` and the Python `listener` talk to each other without any problem: the radio waves don't care which language the DJ speaks.
+
 ---
 
 ## A Minimal Publisher: `talker`

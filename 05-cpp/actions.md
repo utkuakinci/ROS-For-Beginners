@@ -11,6 +11,12 @@ This lesson implements the action examples from [Module 04](../04-python/actions
 - Writing an action client with `SendGoalOptions`
 - Waiting for a goal to finish
 
+## In Simple Terms
+
+In C++, the action server is a restaurant where the front desk **hires a separate cook for every order** (a new thread). The front desk stays free to take new orders and cancellations while the cook works.
+
+**Example:** `handle_accepted` starts `execute` in its own thread and returns at once, so `Ctrl` + `C` on the client is handled while the Fibonacci numbers are still being computed.
+
 ---
 
 ## Setup
