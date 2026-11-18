@@ -11,6 +11,12 @@ A **workspace** is a folder where you develop, build, and install your own ROS 2
 - Installing dependencies with `rosdep`
 - Cleaning a workspace
 
+## In Simple Terms
+
+A workspace is a **workshop**. `src` is the workbench with your projects, `build` is the sawdust and scraps, and `install` is the shelf with finished products ready to use. **Sourcing** switches on the lights so the terminal can find the products on the shelf. An **overlay** is your own shelf placed in front of the store's shelf: if both have the same product, you grab yours first.
+
+**Example:** after `colcon build`, your new node is on the shelf, but a new terminal can't see it until you run `source install/setup.bash`.
+
 ---
 
 ## Workspace Layout

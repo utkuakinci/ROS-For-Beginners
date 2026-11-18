@@ -11,6 +11,12 @@ In an `ament_python` package, `setup.py` tells the build which Python modules to
 - Completing `my_first_pkg`
 - Common errors
 
+## In Simple Terms
+
+`setup.py` is the **packing list** of a Python package: which code goes on the shelf, which extra files come along (launch and config files), and which **buttons** to create. Each entry point is a button labeled with a name that runs a specific function.
+
+**Example:** the line `'hello_node = my_first_pkg.hello_node:main'` creates a button called `hello_node`; pressing it (`ros2 run my_first_pkg hello_node`) runs `main()`.
+
 ---
 
 ## The Generated `setup.py`

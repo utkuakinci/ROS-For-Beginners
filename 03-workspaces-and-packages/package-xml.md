@@ -11,6 +11,12 @@ Every ROS 2 package has a `package.xml` file at its root. This **manifest** tell
 - Resolving dependencies with `rosdep`
 - Common mistakes
 
+## In Simple Terms
+
+`package.xml` is the **label on a food package**: the name, the maker, and the list of ingredients. **rosdep** is a shopping assistant that reads the ingredient lists of all your boxes and buys whatever is missing.
+
+**Example:** your node imports `geometry_msgs`. Writing `<depend>geometry_msgs</depend>` on the label means a teammate's computer can install it with one `rosdep` command.
+
 ---
 
 ## A Generated `package.xml`

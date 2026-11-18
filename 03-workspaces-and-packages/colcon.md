@@ -12,6 +12,12 @@
 - Inspecting a workspace with `colcon list` and `colcon graph`
 - Cleaning and common build errors
 
+## In Simple Terms
+
+colcon is the **factory foreman**. It reads the label on every box in `src`, works out which ones must be built first (a box that needs another box waits for it), builds independent boxes in parallel, and puts the results on the `install` shelf.
+
+**Example:** if `my_first_pkg` uses messages from `my_interfaces`, colcon builds `my_interfaces` first, automatically.
+
 ---
 
 ## `colcon build`
