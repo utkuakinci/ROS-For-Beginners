@@ -269,8 +269,11 @@ $ ros2 run tf2_tools view_frames
 
 The TF tree now starts at `odom`: Gazebo's DiffDrive publishes `odom → base_footprint`, and `robot_state_publisher` publishes everything below it.
 
-```text
-odom ──(Gazebo DiffDrive)──▶ base_footprint ──(robot_state_publisher)──▶ base_link ──▶ wheels, laser, caster
+```mermaid
+flowchart LR
+    O["odom"] -- "Gazebo DiffDrive" --> F["base_footprint"]
+    F -- "robot_state_publisher" --> B["base_link"]
+    B --> W["wheels, laser, caster"]
 ```
 
 Open RViz2 with simulation time:
