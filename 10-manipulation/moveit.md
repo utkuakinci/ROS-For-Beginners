@@ -38,15 +38,16 @@ You describe **what** you want; MoveIt works out **how**.
 
 The central node is **`move_group`**. Everything else talks to it:
 
-```text
-  RViz2 MotionPlanning plugin ─┐
-  Your C++ / Python program ───┼──▶ move_group ──▶ planners (OMPL, Pilz, ...)
-  Command line / services ─────┘        │      ──▶ kinematics plugin (KDL, ...)
-                                        │      ──▶ planning scene (robot + world)
-                                        ▼
-                         FollowJointTrajectory action
-                                        ▼
-                      ros2_control: joint_trajectory_controller ──▶ arm
+```mermaid
+flowchart LR
+    RV["RViz2 MotionPlanning plugin"] --> MG["move_group"]
+    PR["Your C++ / Python program"] --> MG
+    CLI["Command line / services"] --> MG
+    MG --> PL["Planners (OMPL, Pilz, ...)"]
+    MG --> KIN["Kinematics plugin (KDL, ...)"]
+    MG --> PS["Planning scene<br/>(robot + world)"]
+    MG -- "FollowJointTrajectory (action)" --> JTC["ros2_control:<br/>joint_trajectory_controller"]
+    JTC --> ARM["arm"]
 ```
 
 `move_group` gets its knowledge about the robot from a **MoveIt configuration package** (for the Panda: `moveit_resources_panda_moveit_config`), which contains:
