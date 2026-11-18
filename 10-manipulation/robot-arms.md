@@ -12,6 +12,12 @@ Before planning motions with MoveIt, you need the vocabulary and the core ideas 
 - Trajectories
 - How arms are controlled in ROS 2: `ros2_control`
 
+## In Simple Terms
+
+Look at **your own arm**: shoulder, elbow, and wrist are joints, and your hand is the end effector. **Forward kinematics** is "if I bend my elbow 90°, where is my hand?", which is easy to answer. **Inverse kinematics** is "I want my hand on that cup, how should I bend my joints?", which is harder, and often has several answers (elbow up or elbow down).
+
+**Example:** the Python script finds two different ways for a 2-link arm to reach the same point, and none for a point that is too far away.
+
 ---
 
 ## Anatomy of a Robot Arm
