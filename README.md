@@ -22,35 +22,60 @@ The content is organized into progressive modules. We recommend following them i
 
 ### 02. CLI Tools
 Master the essential command-line interface tools to introspect running ROS 2 systems:
-- `ros2 node`, `ros2 topic`, `ros2 service`, `ros2 action`, `ros2 param`, `ros2 run`, `ros2 launch`
+- [`ros2 node`](02-ros2-cli/ros2-node.md) | [`ros2 topic`](02-ros2-cli/ros2-topic.md) | [`ros2 service`](02-ros2-cli/ros2-service.md) | [`ros2 action`](02-ros2-cli/ros2-action.md)
+- [`ros2 param`](02-ros2-cli/ros2-param.md) | [`ros2 run`](02-ros2-cli/ros2-run.md) | [`ros2 launch`](02-ros2-cli/ros2-launch.md)
 
 ### 03. Workspaces & Packages
 Learn how ROS 2 manages software builds:
-- Workspaces, Packages, `colcon`, `package.xml`, and `setup.py`
+- [Workspaces](03-workspaces-and-packages/workspace.md) | [Packages](03-workspaces-and-packages/packages.md) | [colcon](03-workspaces-and-packages/colcon.md)
+- [package.xml](03-workspaces-and-packages/package-xml.md) & [setup.py](03-workspaces-and-packages/setup-py.md)
 
 ### 04. ROS 2 Client Libraries: Python (rclpy)
-- Hands-on implementation of Publishers, Subscribers, Services, Actions, and Custom Interfaces.
+Hands-on implementation of the core communication mechanisms in Python:
+- [Publisher](04-python/publisher.md) | [Subscriber](04-python/subscriber.md)
+- [Services](04-python/services.md) | [Actions](04-python/actions.md)
+- [Custom Interfaces](04-python/custom-messages.md)
 
 ### 05. ROS 2 Client Libraries: C++ (rclcpp)
-- Modern C++ implementations of core ROS 2 communication mechanisms.
+Modern C++ implementations of the same mechanisms:
+- [Publisher](05-cpp/publisher.md) | [Subscriber](05-cpp/subscriber.md)
+- [Services](05-cpp/services.md) | [Actions](05-cpp/actions.md)
 
 ### 06. Transform Library (TF2)
-- Understanding coordinate frames, static/dynamic broadcasters, listeners, and debugging tools.
+Track coordinate frames and convert data between them:
+- [Coordinate Frames](06-tf2/coordinate-frames.md)
+- [TF2 Broadcasters](06-tf2/tf2-broadcaster.md) | [TF2 Listeners](06-tf2/tf2-listener.md)
+- [TF2 Tools](06-tf2/tf2-tools.md)
 
 ### 07. Robot Modeling
-- Describing robots with `URDF` and `Xacro`, displaying state with `robot_state_publisher`, and visualizing in `RViz2`.
+Describe a robot so ROS 2 tools can visualize and simulate it:
+- [URDF](07-robot-modeling/urdf.md) & [Xacro](07-robot-modeling/xacro.md)
+- [robot_state_publisher](07-robot-modeling/robot-state-publisher.md)
+- [RViz2](07-robot-modeling/rviz.md)
 
 ### 08. Simulation
-- Physics simulation using Gazebo, spawning custom robots, attaching sensors (LiDAR, Camera, IMU), and running simulation projects.
+Bring your robot to life in Gazebo with physics and simulated sensors:
+- [Gazebo](08-simulation/gazebo.md)
+- [Spawning Robots](08-simulation/spawning-robots.md) | [Sensors](08-simulation/sensors.md)
+- [Simulation Project](08-simulation/simulation-project.md)
 
 ### 09. Navigation & SLAM
-- Map building (SLAM), robot localization, Nav2 stack configuration, and autonomous navigation.
+Build maps, localize, and navigate autonomously with Nav2:
+- [Mapping (SLAM)](09-navigation/mapping.md) | [Localization](09-navigation/localization.md)
+- [Nav2](09-navigation/nav2.md)
+- [Autonomous Navigation](09-navigation/autonomous-navigation.md)
 
 ### 10. Manipulation
-- Introduction to robotic arms, kinematics, and trajectory planning with MoveIt 2.
+Plan and execute arm motions with MoveIt 2:
+- [Robot Arms](10-manipulation/robot-arms.md)
+- [MoveIt 2](10-manipulation/moveit.md)
+- [Manipulation Project](10-manipulation/manipulation-project.md)
 
 ### 11. Debugging & Troubleshooting
-- Resolving common ROS 2 errors, using `ros2 doctor`, logging/playing back data with `rosbag2`.
+Find out why a ROS 2 system isn't doing what you expect:
+- [Common Errors](11-debugging/common-errors.md) | [ros2 doctor](11-debugging/ros2-doctor.md)
+- [rosbag2](11-debugging/rosbag.md)
+- [Debugging Workflow](11-debugging/debugging-workflow.md)
 
 ---
 
