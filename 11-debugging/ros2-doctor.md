@@ -128,7 +128,7 @@ If nothing arrives:
 |-------|-----|
 | Firewall blocks the traffic | Allow UDP multicast, e.g. `sudo ufw allow in proto udp to 224.0.0.0/4` and `sudo ufw allow in proto udp from 224.0.0.0/4` |
 | Computers on different networks or subnets | Connect them to the same network |
-| Network doesn't support multicast (some Wi-Fi, VPNs, WSL2, cloud) | Use a discovery server or static peers (see the [ROS 2 networking docs](https://docs.ros.org/en/jazzy/Concepts/Intermediate/About-Domain-ID.html)) |
+| Network doesn't support multicast (some Wi-Fi, VPNs, WSL2, cloud) | Use a discovery server or static peers (see the [Discovery Server tutorial](https://docs.ros.org/en/jazzy/Tutorials/Advanced/Discovery-Server/Discovery-Server.html)) |
 | Different `ROS_DOMAIN_ID` | Make them equal (multicast itself works, but ROS 2 ignores the other domain) |
 
 ---
