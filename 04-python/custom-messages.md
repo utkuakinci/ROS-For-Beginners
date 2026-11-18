@@ -11,6 +11,12 @@ The standard message packages cover a lot, but sooner or later you need data tha
 - Building and inspecting your interfaces
 - Using custom interfaces from Python
 
+## In Simple Terms
+
+Custom interfaces are **your own forms**. When no standard form fits, you design one ("Turtle Status Form": name, x, y, near a wall?). Everyone who fills it in or reads it must have the same form, which is why it lives in its own shared package.
+
+**Example:** `TurtleStatus.msg` defines the form, `status_publisher` fills it in twice a second, and any node can read it with `from my_interfaces.msg import TurtleStatus`.
+
 ---
 
 ## Before You Create Your Own

@@ -12,6 +12,12 @@ A **publisher** sends messages on a topic. In this lesson you write two publishe
 - Making a node configurable with parameters
 - Quality of Service for publishers
 
+## In Simple Terms
+
+A publisher node is a **radio DJ**. First you set up the station (`create_publisher`), then an alarm clock that rings regularly (`create_timer`), and every time it rings, the DJ says something on air (`publish`).
+
+**Example:** the `talker` rings twice a second and says "Hello World: 1", "Hello World: 2", ...; the `circle_driver` rings ten times a second and says "drive forward and turn left" to the turtle.
+
 ---
 
 ## The Anatomy of an rclpy Node

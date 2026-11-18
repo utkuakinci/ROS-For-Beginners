@@ -11,6 +11,12 @@ Actions handle long-running tasks: the client sends a **goal**, the server repor
 - Writing an action client
 - Following a goal through its life cycle
 
+## In Simple Terms
+
+An action server is a **pizza oven worker** who calls out progress while baking ("dough ready... in the oven... 2 minutes!"). The multi-threaded executor is a **second employee** who answers the phone while the first one bakes, so a customer's "cancel my order" call isn't ignored.
+
+**Example:** `fibonacci_server` computes one number per second and reports each step as feedback; pressing `Ctrl` + `C` in the client cancels the order midway.
+
 ---
 
 ## The Action Type: `Fibonacci`

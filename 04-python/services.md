@@ -11,6 +11,12 @@ Services implement **request/response** communication: a client sends a request,
 - Calling services from inside a running node
 - Avoiding deadlocks
 
+## In Simple Terms
+
+A service server is a **vending machine**: you put in a request (two numbers), and it hands you a product (their sum). The client is the person using the machine. A **deadlock** is standing in front of the machine waiting for your snack, while you are also the only person who could refill it.
+
+**Example:** `turtle_spawner` presses the `/spawn` button and walks away; when the new turtle is ready, its callback simply gets notified.
+
 ---
 
 ## The Service Type: `AddTwoInts`

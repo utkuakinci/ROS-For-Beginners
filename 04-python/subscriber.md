@@ -12,6 +12,12 @@ A **subscriber** receives messages from a topic and runs a callback for each one
 - Throttled logging
 - QoS for subscribers
 
+## In Simple Terms
+
+A subscriber is a **radio with a sticky note** that says "every time something plays, do this" (the callback). A node that both subscribes and publishes is like **walking with your eyes open**: you see (subscribe), decide, and move your feet (publish), over and over.
+
+**Example:** `wall_bouncer` sees the turtle's position, notices "the wall is close", and sends "turn left" until the way ahead is free.
+
 ---
 
 ## A Minimal Subscriber: `listener`
