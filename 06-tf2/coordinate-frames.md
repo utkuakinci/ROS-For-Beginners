@@ -123,16 +123,13 @@ print(quaternion_from_euler(0.0, 0.0, math.pi / 2))   # 90° yaw → (0.0, 0.0, 
 
 TF2 organizes all frames in a **tree**: every frame has exactly **one parent** (except the root), and there are no loops. A typical mobile robot:
 
-```text
-map
- └── odom
-      └── base_footprint
-           └── base_link
-                ├── left_wheel_link
-                ├── right_wheel_link
-                ├── laser
-                └── camera_link
-                     └── camera_optical_frame
+```mermaid
+flowchart TB
+    map --> odom --> base_footprint --> base_link
+    base_link --> left_wheel_link
+    base_link --> right_wheel_link
+    base_link --> laser
+    base_link --> camera_link --> camera_optical_frame
 ```
 
 Because it is a tree, TF2 can find the transform between **any** two frames by walking up from one to their common ancestor and down to the other, chaining the transforms along the way. You never need to publish `laser → map` directly: TF2 computes it from `laser → base_link → base_footprint → odom → map`.

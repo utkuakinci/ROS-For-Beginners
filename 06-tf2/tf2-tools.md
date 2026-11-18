@@ -35,12 +35,12 @@ $ ros2 run tf2_tools view_frames
 
 This listens for 5 seconds and writes `frames_<date>.pdf` (and a `.gv` source file) to the current folder. Open it with any PDF viewer:
 
-```text
-            world
-           ╱      ╲
-      turtle1     turtle2
-     ╱       ╲
-turtle1_camera  turtle1_antenna
+```mermaid
+flowchart TB
+    world --> turtle1
+    world --> turtle2
+    turtle1 --> turtle1_camera
+    turtle1 --> turtle1_antenna
 ```
 
 Each arrow in the PDF is labeled with:
