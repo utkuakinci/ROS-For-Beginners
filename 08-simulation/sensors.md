@@ -12,6 +12,12 @@ A robot without sensors is blind. In this lesson you give `my_robot` three simul
 - Bridging sensor topics
 - Viewing sensor data in RViz2
 
+## In Simple Terms
+
+Sensors give the robot **senses**: the LiDAR is a spinning tape measure that measures the distance to everything around it, the camera is its eyes, and the IMU is its inner ear that feels turning and tilting.
+
+**Example:** the simulated LiDAR measures 360 distances per turn, ten times per second. In RViz2 they appear as dots outlining the room's walls.
+
 ---
 
 ## How Simulated Sensors Work
