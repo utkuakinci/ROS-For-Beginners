@@ -23,8 +23,12 @@ Xacro turns the assembly manual into a **spreadsheet**: put the wheel size in on
 
 A `.urdf.xacro` file is a URDF with extra tags. The `xacro` tool **expands** it into plain URDF before anything else reads it:
 
-```text
-my_robot.urdf.xacro ──▶ xacro ──▶ URDF (XML) ──▶ robot_state_publisher, RViz2, Gazebo
+```mermaid
+flowchart LR
+    X["my_robot.urdf.xacro"] --> XA["xacro"] --> U["URDF (XML)"]
+    U --> R["robot_state_publisher"]
+    U --> V["RViz2"]
+    U --> G["Gazebo"]
 ```
 
 ```bash
