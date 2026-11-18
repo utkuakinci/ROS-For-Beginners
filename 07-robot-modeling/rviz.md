@@ -11,6 +11,12 @@
 - Displaying sensor data
 - Views and tools
 
+## In Simple Terms
+
+RViz2 is the robot's **dashboard screen**. Like a car's parking camera display, it shows what the robot's sensors and software *believe*, not the real world. If the laser is mounted in the wrong place in the model, RViz2 faithfully shows walls in the wrong place.
+
+**Example:** the fake laser publishes a ring of points around the `laser` frame; move the laser in the model, and the whole ring moves with it on the screen.
+
 ---
 
 ## The Interface

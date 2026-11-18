@@ -11,6 +11,12 @@ The **Unified Robot Description Format (URDF)** is an XML format that describes 
 - Building a complete mobile robot
 - Checking and viewing a URDF
 
+## In Simple Terms
+
+URDF is the **assembly manual** of a robot, like LEGO or IKEA instructions: a list of parts (**links**) and how they are connected (**joints**). A glued connection is `fixed`, a door hinge is `revolute`, a wheel axle is `continuous`, and a drawer is `prismatic`.
+
+**Example:** `my_robot` is a box-shaped body, two wheels on axles, a caster ball glued underneath, and a laser glued on top.
+
 ---
 
 ## Links and Joints

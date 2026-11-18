@@ -11,6 +11,12 @@ A robot model on its own is just a file. **robot_state_publisher** brings it to 
 - A launch file that loads a Xacro model
 - Building and running the description package
 
+## In Simple Terms
+
+`robot_state_publisher` is a **narrator with the assembly manual**. It knows how all the parts are connected, listens to the current joint positions (how far each wheel or arm joint is turned), and announces where every part is right now, as TF.
+
+**Example:** you drag a wheel slider in the GUI; the narrator hears "left wheel turned 1 rad" and immediately announces the wheel's new orientation, so RViz2 can draw it turning.
+
 ---
 
 ## How It Works
