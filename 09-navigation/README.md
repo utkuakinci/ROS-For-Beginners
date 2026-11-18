@@ -15,15 +15,21 @@ The order matters: you first need a map (lesson 1) before the robot can locate i
 
 ## The Big Picture
 
-```text
-            ┌──────────────────────────── Nav2 ─────────────────────────────┐
-  goal ───▶ │  BT Navigator ──▶ Planner (path) ──▶ Controller (cmd_vel)    │ ──▶ /cmd_vel ──▶ robot
-            │        ▲                ▲                    ▲                │
-            │        │          global costmap        local costmap         │
-            └────────┼────────────────┼────────────────────┼────────────────┘
-                     │                │                    │
-      map ◀── map_server         /map + /scan            /scan
-      pose ◀── AMCL  ◀── /scan, /odom, TF
+```mermaid
+flowchart LR
+    G["goal"] --> BT
+    subgraph NAV2["Nav2"]
+        BT["BT Navigator"] --> PL["Planner<br/>(path)"]
+        PL --> CT["Controller<br/>(cmd_vel)"]
+        GC["global costmap"] -.-> PL
+        LC["local costmap"] -.-> CT
+    end
+    CT -- "/cmd_vel" --> R["robot"]
+    MS["map_server"] -- "map" --> GC
+    S["/scan"] --> GC & LC
+    S --> AM["AMCL"]
+    OD["/odom, TF"] --> AM
+    AM -- "pose" --> BT
 ```
 
 | Question | Answered by | Lesson |

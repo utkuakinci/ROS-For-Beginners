@@ -21,13 +21,13 @@ A robot model on its own is just a file. **robot_state_publisher** brings it to 
 
 ## How It Works
 
-```text
-                          robot_description (URDF)
-                                   │
-                                   ▼
-/joint_states ──────────▶ robot_state_publisher ──────▶ /tf          (moving joints)
-(joint positions)                  │              └───▶ /tf_static   (fixed joints)
-                                   └──────────────────▶ /robot_description
+```mermaid
+flowchart LR
+    D["robot_description<br/>(URDF)"] --> R["robot_state_publisher"]
+    J["/joint_states<br/>(joint positions)"] --> R
+    R -- "moving joints" --> TF["/tf"]
+    R -- "fixed joints" --> TS["/tf_static"]
+    R --> RD["/robot_description"]
 ```
 
 | Input / output | Content |

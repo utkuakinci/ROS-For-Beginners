@@ -286,15 +286,13 @@ if __name__ == '__main__':
 
 ### The life of a goal, step by step
 
-```text
-send_goal_async() ──▶ goal_response_callback()   accepted or rejected?
-                              │ accepted
-                              ▼
-                       get_result_async()
-                              │
-        feedback_callback() ◀─┤  called repeatedly while the server works
-                              ▼
-                       result_callback()          final status and result
+```mermaid
+flowchart TB
+    A["send_goal_async()"] --> B{"goal_response_callback()<br/>accepted?"}
+    B -- "no" --> R["Goal rejected: done"]
+    B -- "yes" --> C["get_result_async()"]
+    C --> F["feedback_callback()<br/>called repeatedly while the server works"]
+    F --> D["result_callback()<br/>final status and result"]
 ```
 
 | Step | What happens |

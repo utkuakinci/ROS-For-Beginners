@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/cover.svg" alt="ROS-For-Beginners: a hands-on ROS 2 learning roadmap, from your first node to autonomous navigation and manipulation" width="100%">
+</p>
+
 # 🤖 ROS-For-Beginners
 Welcome to **ROS-For-Beginners**! This repository is designed as a structured, hands-on, and beginner-friendly roadmap to learning **ROS 2 (Robot Operating System)** from scratch.
 
@@ -115,6 +119,8 @@ ROS-For-Beginners/
 ├── README.md
 ├── CONTRIBUTING.md
 ├── LICENSE
+├── assets/
+│   └── cover.svg
 │
 ├── 00-prerequisites/
 │   ├── README.md

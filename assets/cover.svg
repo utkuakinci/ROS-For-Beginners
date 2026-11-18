@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">ROS-For-Beginners</title>
+  <desc id="desc">A hands-on ROS 2 learning roadmap: from your first node to autonomous navigation and manipulation.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1f3a"/>
+      <stop offset="0.55" stop-color="#11325a"/>
+      <stop offset="1" stop-color="#1a4a73"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.42" r="0.45">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="roadmap" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="1200" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect width="1280" height="640" fill="url(#grid)"/>
+  <rect width="1280" height="640" fill="url(#glow)"/>
+
+  <g font-family="Segoe UI, Helvetica Neue, Arial, sans-serif">
+
+    <!-- Title -->
+    <text x="80" y="170" font-size="72" font-weight="700" fill="#ffffff">
+      <tspan fill="#22d3ee">ROS</tspan>-For-Beginners
+    </text>
+    <text x="82" y="226" font-size="30" fill="#e2e8f0">A hands-on ROS 2 learning roadmap</text>
+    <text x="82" y="266" font-size="20" fill="#94a3b8">From your first node to autonomous navigation &amp; manipulation</text>
+
+    <!-- Topic chips -->
+    <g font-size="17" font-weight="600" fill="#e2e8f0" text-anchor="middle">
+      <rect x="80" y="304" width="88" height="38" rx="19" fill="#ffffff" fill-opacity="0.08" stroke="#22d3ee" stroke-opacity="0.6"/>
+      <text x="124" y="329">Python</text>
+      <rect x="178" y="304" width="60" height="38" rx="19" fill="#ffffff" fill-opacity="0.08" stroke="#22d3ee" stroke-opacity="0.6"/>
+      <text x="208" y="329">C++</text>
+      <rect x="248" y="304" width="60" height="38" rx="19" fill="#ffffff" fill-opacity="0.08" stroke="#22d3ee" stroke-opacity="0.6"/>
+      <text x="278" y="329">TF2</text>
+      <rect x="318" y="304" width="70" height="38" rx="19" fill="#ffffff" fill-opacity="0.08" stroke="#22d3ee" stroke-opacity="0.6"/>
+      <text x="353" y="329">URDF</text>
+      <rect x="398" y="304" width="88" height="38" rx="19" fill="#ffffff" fill-opacity="0.08" stroke="#a78bfa" stroke-opacity="0.7"/>
+      <text x="442" y="329">Gazebo</text>
+      <rect x="496" y="304" width="70" height="38" rx="19" fill="#ffffff" fill-opacity="0.08" stroke="#a78bfa" stroke-opacity="0.7"/>
+      <text x="531" y="329">Nav2</text>
+      <rect x="576" y="304" width="108" height="38" rx="19" fill="#ffffff" fill-opacity="0.08" stroke="#a78bfa" stroke-opacity="0.7"/>
+      <text x="630" y="329">MoveIt 2</text>
+    </g>
+
+    <text x="82" y="408" font-size="18" fill="#94a3b8">ROS 2 Jazzy · Ubuntu 24.04 · Python &amp; C++ · Hands-on projects</text>
+
+    <!-- Node graph -->
+    <g>
+      <path d="M 932 178 Q 980 140 1016 146" fill="none" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+      <path d="M 1082 158 Q 1130 170 1150 196" fill="none" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+      <text x="940" y="132" font-size="15" fill="#cbd5e1" font-family="Consolas, Menlo, monospace">/scan</text>
+      <text x="1112" y="152" font-size="15" fill="#cbd5e1" font-family="Consolas, Menlo, monospace">/cmd_vel</text>
+
+      <circle cx="900" cy="192" r="34" fill="#0f2747" stroke="#22d3ee" stroke-width="2.5"/>
+      <text x="900" y="197" font-size="15" fill="#e2e8f0" text-anchor="middle">lidar</text>
+      <circle cx="1050" cy="148" r="34" fill="#0f2747" stroke="#22d3ee" stroke-width="2.5"/>
+      <text x="1050" y="153" font-size="15" fill="#e2e8f0" text-anchor="middle">planner</text>
+      <circle cx="1176" cy="224" r="34" fill="#0f2747" stroke="#a78bfa" stroke-width="2.5"/>
+      <text x="1176" y="229" font-size="15" fill="#e2e8f0" text-anchor="middle">motors</text>
+    </g>
+
+    <!-- Wall -->
+    <rect x="1206" y="300" width="16" height="212" rx="2" fill="#475569"/>
+
+    <!-- Laser rays -->
+    <g stroke="#22d3ee" stroke-width="2" stroke-opacity="0.75" stroke-dasharray="6 6">
+      <line x1="985" y1="388" x2="1206" y2="318"/>
+      <line x1="985" y1="388" x2="1206" y2="358"/>
+      <line x1="985" y1="388" x2="1206" y2="398"/>
+    </g>
+    <g fill="#f472b6">
+      <circle cx="1206" cy="318" r="5"/>
+      <circle cx="1206" cy="358" r="5"/>
+      <circle cx="1206" cy="398" r="5"/>
+    </g>
+
+    <!-- Robot (side view) -->
+    <g>
+      <rect x="965" y="374" width="40" height="24" rx="5" fill="#94a3b8"/>
+      <rect x="870" y="398" width="230" height="72" rx="14" fill="#2563eb"/>
+      <rect x="870" y="398" width="230" height="16" rx="8" fill="#60a5fa" fill-opacity="0.6"/>
+      <circle cx="1078" cy="434" r="8" fill="#e0f2fe"/>
+      <circle cx="920" cy="480" r="32" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
+      <circle cx="920" cy="480" r="11" fill="#94a3b8"/>
+      <circle cx="1046" cy="480" r="32" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
+      <circle cx="1046" cy="480" r="11" fill="#94a3b8"/>
+    </g>
+
+    <!-- Ground -->
+    <line x1="840" y1="512" x2="1240" y2="512" stroke="#64748b" stroke-width="2"/>
+
+    <!-- Module roadmap 00-11 -->
+    <line x1="80" y1="566" x2="1200" y2="566" stroke="url(#roadmap)" stroke-width="4" stroke-linecap="round"/>
+    <g fill="#0b1f3a" stroke-width="3">
+      <circle cx="80" cy="566" r="9" stroke="#22d3ee"/>
+      <circle cx="181.8" cy="566" r="9" stroke="#2bccef"/>
+      <circle cx="283.6" cy="566" r="9" stroke="#35c4f0"/>
+      <circle cx="385.5" cy="566" r="9" stroke="#3fbdf1"/>
+      <circle cx="487.3" cy="566" r="9" stroke="#49b5f2"/>
+      <circle cx="589.1" cy="566" r="9" stroke="#53aef3"/>
+      <circle cx="690.9" cy="566" r="9" stroke="#5da6f4"/>
+      <circle cx="792.7" cy="566" r="9" stroke="#679ff5"/>
+      <circle cx="894.5" cy="566" r="9" stroke="#7197f6"/>
+      <circle cx="996.4" cy="566" r="9" stroke="#7b90f7"/>
+      <circle cx="1098.2" cy="566" r="9" stroke="#8588f8"/>
+      <circle cx="1200" cy="566" r="9" stroke="#a78bfa"/>
+    </g>
+    <g font-size="14" fill="#94a3b8" text-anchor="middle" font-family="Consolas, Menlo, monospace">
+      <text x="80" y="598">00</text>
+      <text x="181.8" y="598">01</text>
+      <text x="283.6" y="598">02</text>
+      <text x="385.5" y="598">03</text>
+      <text x="487.3" y="598">04</text>
+      <text x="589.1" y="598">05</text>
+      <text x="690.9" y="598">06</text>
+      <text x="792.7" y="598">07</text>
+      <text x="894.5" y="598">08</text>
+      <text x="996.4" y="598">09</text>
+      <text x="1098.2" y="598">10</text>
+      <text x="1200" y="598">11</text>
+    </g>
+    <g font-size="13" fill="#cbd5e1" text-anchor="middle">
+      <text x="80" y="544">Basics</text>
+      <text x="589.1" y="544">Python &amp; C++</text>
+      <text x="894.5" y="544">Simulation</text>
+      <text x="996.4" y="544">Navigation</text>
+      <text x="1200" y="544">Debugging</text>
+    </g>
+  </g>
+</svg>

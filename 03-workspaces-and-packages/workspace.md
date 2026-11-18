@@ -112,12 +112,11 @@ Use `setup.bash` unless you have a specific reason not to.
 
 Workspaces stack on top of each other:
 
-```text
-┌─────────────────────────────┐
-│  ~/ros2_ws        (overlay) │  ← your packages
-├─────────────────────────────┤
-│  /opt/ros/jazzy  (underlay) │  ← ROS 2 installed with apt
-└─────────────────────────────┘
+```mermaid
+flowchart TB
+    O["~/ros2_ws (overlay)<br/>your packages"] --> U["/opt/ros/jazzy (underlay)<br/>ROS 2 installed with apt"]
+    style O fill:#d4edda,stroke:#28a745
+    style U fill:#e2e3e5,stroke:#6c757d
 ```
 
 - The **underlay** is the environment that was sourced when you built: usually the ROS 2 installation in `/opt/ros/jazzy`.

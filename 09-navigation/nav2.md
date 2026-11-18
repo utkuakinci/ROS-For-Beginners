@@ -24,19 +24,14 @@ Nav2 is a **navigation app in a car**. The **planner** calculates the route on t
 
 Nav2 is made of several **servers**, each a [lifecycle node](localization.md#lifecycle-nodes) with one job, coordinated by a **behavior tree**:
 
-```text
-                         NavigateToPose (action)
-                                  │
-                         ┌────────▼────────┐
-                         │  BT Navigator   │  runs a behavior tree:
-                         └──┬─────┬─────┬──┘  plan → follow → recover
-              ComputePath   │     │     │   Spin / BackUp / Wait
-             ┌──────────────▼┐  ┌─▼─────────────┐  ┌▼────────────────┐
-             │ Planner Server│  │Controller Svr │  │ Behavior Server │
-             │ global costmap│  │ local costmap │  │                 │
-             └───────────────┘  └───────┬───────┘  └─────────────────┘
-                                        │ cmd_vel
-                               Velocity Smoother ──▶ /cmd_vel ──▶ robot
+```mermaid
+flowchart TB
+    G["NavigateToPose (action)"] --> BT["BT Navigator<br/>runs a behavior tree:<br/>plan → follow → recover"]
+    BT -- "ComputePath" --> PS["Planner Server<br/>global costmap"]
+    BT -- "FollowPath" --> CS["Controller Server<br/>local costmap"]
+    BT -- "Spin / BackUp / Wait" --> BS["Behavior Server"]
+    CS -- "cmd_vel" --> VS["Velocity Smoother"]
+    VS -- "/cmd_vel" --> R["robot"]
 ```
 
 | Server | Job |
@@ -54,12 +49,13 @@ Nav2 is made of several **servers**, each a [lifecycle node](localization.md#lif
 
 A **behavior tree** describes the navigation logic as a tree of small actions and conditions. The default tree does roughly this:
 
-```text
-Navigate with recovery
-├── Repeat until goal reached:
-│     ├── Compute a path to the goal (replan about once per second)
-│     └── Follow the path
-└── If that fails: clear costmaps → spin → wait → back up → try again
+```mermaid
+flowchart TB
+    N["Navigate with recovery"] --> L["Repeat until the goal is reached"]
+    L --> P["Compute a path to the goal<br/>(replan about once per second)"]
+    L --> F["Follow the path"]
+    N -. "if that fails" .-> R["Clear costmaps → spin → wait → back up"]
+    R -. "try again" .-> L
 ```
 
 Because the logic is a tree in an XML file and not hard-coded, you can change Nav2's behavior (replan more often, add a different recovery) without touching C++ code. For this guide, the default tree is all you need.

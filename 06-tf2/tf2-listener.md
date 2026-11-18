@@ -24,9 +24,11 @@ A listener asks TF2 **"where is that, seen from here?"**, like checking a friend
 
 Two objects work together:
 
-```text
-  /tf, /tf_static ──▶ TransformListener ──▶ Buffer ──▶ lookup_transform(...)
-                      (subscribes)          (stores ~10 s of history)
+```mermaid
+flowchart LR
+    T["/tf, /tf_static"] --> L["TransformListener<br/>(subscribes)"]
+    L --> B["Buffer<br/>(stores ~10 s of history)"]
+    B --> Q["lookup_transform(...)"]
 ```
 
 - The **`TransformListener`** subscribes to `/tf` and `/tf_static`.

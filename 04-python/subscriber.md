@@ -99,16 +99,11 @@ Start the listener before the talker, or stop and restart the talker: the listen
 
 ## How Callbacks and Spinning Work
 
-```text
-          rclpy.spin(node)
-               │
-     ┌─────────▼──────────┐
-     │  wait for an event │◀───────────────────┐
-     └─────────┬──────────┘                    │
-               │ message arrived / timer due   │
-     ┌─────────▼──────────┐                    │
-     │  call its callback │────────────────────┘
-     └────────────────────┘
+```mermaid
+flowchart TB
+    S(["rclpy.spin(node)"]) --> W["Wait for an event"]
+    W -- "message arrived / timer due" --> C["Call its callback"]
+    C --> W
 ```
 
 `spin` runs an **executor**, a loop that waits for events and calls the matching callback. By default, a node's callbacks run **one at a time** in a single thread. This has two consequences:
@@ -223,12 +218,10 @@ $ ros2 param set /wall_bouncer margin 3.0
 
 Run `rqt_graph`: your node now both receives from and sends to turtlesim, closing the loop.
 
-```text
-              /turtle1/pose
-  ┌────────────┐ ──────────────▶ ┌──────────────┐
-  │ /turtlesim │                 │ /wall_bouncer│
-  └────────────┘ ◀────────────── └──────────────┘
-              /turtle1/cmd_vel
+```mermaid
+flowchart LR
+    T["/turtlesim"] -- "/turtle1/pose" --> W["/wall_bouncer"]
+    W -- "/turtle1/cmd_vel" --> T
 ```
 
 ---

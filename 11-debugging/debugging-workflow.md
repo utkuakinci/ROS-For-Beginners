@@ -23,10 +23,11 @@ Debugging is **detective work**: collect the clues before accusing anyone. And l
 
 ## The Process
 
-```text
- 1. Reproduce  ──▶  2. Observe  ──▶  3. Hypothesize  ──▶  4. Test  ──▶  5. Fix & verify
-       ▲                                                     │
-       └─────────────────── hypothesis wrong ────────────────┘
+```mermaid
+flowchart LR
+    R["1. Reproduce"] --> O["2. Observe"] --> H["3. Hypothesize"] --> T{"4. Test:<br/>confirmed?"}
+    T -- "yes" --> F["5. Fix & verify"]
+    T -- "no: hypothesis wrong" --> O
 ```
 
 | Step | What to do |
@@ -45,9 +46,12 @@ The most common mistake is skipping step 2: guessing a fix, changing three thing
 
 A ROS 2 system is a chain of nodes connected by topics, services, and transforms. Find **where** in the chain the data goes wrong by checking it at each link, from the source to the output:
 
-```text
- sensor/driver ──▶ /scan ──▶ your node ──▶ /cmd_vel ──▶ bridge ──▶ robot
-       ✓              ✓          ?
+```mermaid
+flowchart LR
+    S["sensor/driver ✓"] --> SC["/scan ✓"] --> N["your node ?"] --> C["/cmd_vel"] --> B["bridge"] --> R["robot"]
+    style S fill:#d4edda,stroke:#28a745
+    style SC fill:#d4edda,stroke:#28a745
+    style N fill:#fff3cd,stroke:#ffc107
 ```
 
 At each link, ask:

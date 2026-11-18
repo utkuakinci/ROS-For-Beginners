@@ -72,11 +72,10 @@ There are two ways to describe where an arm is:
 
 Converting between the two is what **kinematics** does.
 
-```text
-                    forward kinematics
-   joint angles  ───────────────────────▶  end effector pose
-                 ◀───────────────────────
-                    inverse kinematics
+```mermaid
+flowchart LR
+    J["Joint angles"] -- "forward kinematics<br/>(always one answer)" --> P["End effector pose"]
+    P -- "inverse kinematics<br/>(none, one, or many answers)" --> J
 ```
 
 ---
@@ -295,14 +294,12 @@ Computing a collision-free trajectory is **motion planning**, the job of MoveIt 
 
 On real robots, and in simulation, arms are usually driven through **`ros2_control`**, the ROS 2 framework for controllers and hardware interfaces:
 
-```text
- MoveIt ──FollowJointTrajectory (action)──▶ joint_trajectory_controller
-                                                    │  position commands
-                                                    ▼
-                                          hardware interface ──▶ motors / Gazebo / mock
-                                                    │  joint states
-                                                    ▼
-                                           joint_state_broadcaster ──▶ /joint_states
+```mermaid
+flowchart TB
+    M["MoveIt"] -- "FollowJointTrajectory (action)" --> JTC["joint_trajectory_controller"]
+    JTC -- "position commands" --> HW["Hardware interface<br/>(motors / Gazebo / mock)"]
+    HW -- "joint states" --> JSB["joint_state_broadcaster"]
+    JSB --> JS["/joint_states"]
 ```
 
 | Component | Role |

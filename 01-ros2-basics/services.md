@@ -23,11 +23,13 @@ A service is an **information desk**: you walk up, ask one question, wait, and g
 
 A service has one **server**, the node that provides it, and any number of **clients**, nodes that call it. Each call is a pair of messages: a **request** from the client and a **response** from the server.
 
-```text
-┌──────────────┐  ── request:  {x: 2, y: 2, name: ''} ──▶  ┌──────────────┐
-│    Client    │                                           │    Server    │
-│ (any node)   │  ◀── response: {name: 'turtle2'} ───────  │ (/turtlesim) │
-└──────────────┘                                           └──────────────┘
+```mermaid
+sequenceDiagram
+    participant C as Client (any node)
+    participant S as Server (/turtlesim)
+    C->>S: request: x=2, y=2, name=''
+    Note right of S: spawns a new turtle
+    S-->>C: response: name='turtle2'
 ```
 
 Key differences from topics:

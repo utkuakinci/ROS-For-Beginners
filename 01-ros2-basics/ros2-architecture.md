@@ -22,15 +22,10 @@ Picture a robot's software as an **office**. Each employee has one job (a **node
 
 A running ROS 2 system is described as a **graph**: a network of processes and the connections between them.
 
-```text
-                     /turtle1/cmd_vel
- ┌────────────────┐   (Twist messages)   ┌────────────────┐
- │  /teleop_turtle │ ───────────────────▶ │   /turtlesim   │
- └────────────────┘                      └────────────────┘
-                                                 │
-                                                 │ /turtle1/pose
-                                                 ▼
-                                         (anyone interested)
+```mermaid
+flowchart LR
+    T["/teleop_turtle"] -- "/turtle1/cmd_vel<br/>(Twist messages)" --> S["/turtlesim"]
+    S -- "/turtle1/pose" --> A["(anyone interested)"]
 ```
 
 The building blocks of the graph are:
@@ -52,23 +47,23 @@ Every element has a **name**, like a path in a filesystem: `/turtlesim`, `/turtl
 
 ROS 2 offers three ways for nodes to communicate. Choosing the right one is one of the first design decisions you make.
 
-```text
- TOPIC (publish / subscribe)         one-way, continuous, many-to-many
- ┌───────────┐  msg  msg  msg   ┌────────────┐
- │ Publisher │ ───────────────▶ │ Subscriber │
- └───────────┘                  └────────────┘
-
- SERVICE (request / response)        two-way, short, one-to-one
- ┌────────┐ ──── request ────▶ ┌────────┐
- │ Client │ ◀─── response ──── │ Server │
- └────────┘                    └────────┘
-
- ACTION (goal / feedback / result)   two-way, long-running, cancellable
- ┌────────┐ ──── goal ───────▶ ┌────────┐
- │ Client │ ◀─── feedback ──── │ Server │
- │        │ ◀─── feedback ──── │        │
- │        │ ◀─── result ────── │        │
- └────────┘                    └────────┘
+```mermaid
+flowchart LR
+    subgraph TOPIC["TOPIC: one-way, continuous, many-to-many"]
+        direction LR
+        PUB["Publisher"] -- "msg, msg, msg" --> SUB["Subscriber"]
+    end
+    subgraph SERVICE["SERVICE: two-way, short, one-to-one"]
+        direction LR
+        CL["Client"] -- "request" --> SV["Server"]
+        SV -. "response" .-> CL
+    end
+    subgraph ACTION["ACTION: long-running, cancellable"]
+        direction LR
+        AC["Client"] -- "goal" --> AS["Server"]
+        AS -. "feedback (repeated)" .-> AC
+        AS -. "result" .-> AC
+    end
 ```
 
 | Use a... | When | Example |
@@ -83,19 +78,13 @@ ROS 2 offers three ways for nodes to communicate. Choosing the right one is one 
 
 When your node publishes a message, it passes through several layers before reaching the network:
 
-```text
-┌─────────────────────────────────────────────┐
-│  Your node (Python or C++)                  │
-├──────────────────────┬──────────────────────┤
-│  rclpy (Python)      │  rclcpp (C++)        │  ◀── client libraries
-├──────────────────────┴──────────────────────┤
-│  rcl  (shared C library)                    │  ◀── common logic
-├─────────────────────────────────────────────┤
-│  rmw  (ROS MiddleWare interface)            │  ◀── abstraction layer
-├─────────────────────────────────────────────┤
-│  DDS implementation                         │  ◀── actual transport
-│  (eProsima Fast DDS, Eclipse Cyclone DDS…)  │
-└─────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+    N["Your node (Python or C++)"] --> PY["rclpy (Python)"] & CPP["rclcpp (C++)"]
+    PY --> RCL["rcl: shared C library"]
+    CPP --> RCL
+    RCL --> RMW["rmw: ROS MiddleWare interface"]
+    RMW --> DDS["DDS implementation<br/>(Fast DDS, Cyclone DDS, ...)"]
 ```
 
 - **Client libraries** (`rclpy`, `rclcpp`) are what you program against. They feel natural in their language.

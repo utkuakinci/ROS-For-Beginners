@@ -21,12 +21,11 @@ Time to put the module together. In this project you finish the simulation setup
 
 ## The Goal
 
-```text
-                 /scan                          /cmd_vel
- ┌──────────┐ ─────────▶ ┌──────────────┐ ─────────────▶ ┌──────────┐
- │  Gazebo  │            │ scan_avoider │                │  Gazebo  │
- │  LiDAR   │            │  (your node) │                │ DiffDrive│
- └──────────┘            └──────────────┘                └──────────┘
+```mermaid
+flowchart LR
+    L["Gazebo<br/>LiDAR"] -- "/scan" --> A["scan_avoider<br/>(your node)"]
+    A -- "/cmd_vel" --> D["Gazebo<br/>DiffDrive"]
+    D -. "the robot moves,<br/>the scan changes" .-> L
 ```
 
 When you are done, this is all it takes to watch the robot explore:

@@ -281,10 +281,10 @@ The blue vehicle starts moving.
 
 The **bridge** translates messages between Gazebo Transport and ROS 2, topic by topic:
 
-```text
- ROS 2 nodes ◀──▶  ros_gz_bridge  ◀──▶  Gazebo
- /cmd_vel           (translates)         /cmd_vel
- geometry_msgs/msg/Twist                 gz.msgs.Twist
+```mermaid
+flowchart LR
+    R["ROS 2 nodes<br/>/cmd_vel<br/>geometry_msgs/msg/Twist"] <--> B["ros_gz_bridge<br/>(translates)"]
+    B <--> G["Gazebo<br/>/cmd_vel<br/>gz.msgs.Twist"]
 ```
 
 The quickest way to create a bridge is on the command line:

@@ -25,8 +25,11 @@ Odometry integrates wheel motion over time, so its error only grows. You saw thi
 
 Localization fixes this by comparing what the robot **sees** (laser scans) with what it **expects to see** on the map from a given pose. Like SLAM, it publishes its correction as the `map → odom` transform:
 
-```text
-map ──(AMCL)──▶ odom ──(odometry)──▶ base_footprint ──▶ ...
+```mermaid
+flowchart LR
+    M["map"] -- "AMCL" --> O["odom"]
+    O -- "odometry" --> F["base_footprint"]
+    F --> R["..."]
 ```
 
 The only difference from mapping: the map comes from a file and stays fixed.
@@ -57,10 +60,13 @@ AMCL needs the **initial pose** roughly right. With a good starting guess, it co
 
 All Nav2 servers, including the map server and AMCL, are **lifecycle nodes** (also called *managed nodes*). Unlike the nodes you wrote, they don't start working immediately. They move through defined states:
 
-```text
- Unconfigured ──configure──▶ Inactive ──activate──▶ Active
-      ▲                          │                      │
-      └────────cleanup───────────┘◀─────deactivate──────┘
+```mermaid
+stateDiagram-v2
+    [*] --> Unconfigured
+    Unconfigured --> Inactive: configure
+    Inactive --> Active: activate
+    Active --> Inactive: deactivate
+    Inactive --> Unconfigured: cleanup
 ```
 
 | State | Meaning |

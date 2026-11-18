@@ -34,8 +34,11 @@ In ROS 2, the result shows up in two places:
 | `/map` topic (`nav_msgs/msg/OccupancyGrid`) | The map built so far |
 | `map → odom` transform | The correction SLAM applies to odometry (see [REP 105](../06-tf2/coordinate-frames.md#standard-frames-rep-105)) |
 
-```text
-map ──(slam_toolbox)──▶ odom ──(Gazebo DiffDrive)──▶ base_footprint ──(robot_state_publisher)──▶ ...
+```mermaid
+flowchart LR
+    M["map"] -- "slam_toolbox" --> O["odom"]
+    O -- "Gazebo DiffDrive" --> F["base_footprint"]
+    F -- "robot_state_publisher" --> R["..."]
 ```
 
 SLAM publishes `map → odom`, not `map → base_footprint`, so the tree keeps one parent per frame: odometry stays smooth and continuous, and SLAM corrects its drift on top.
