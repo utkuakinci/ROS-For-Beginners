@@ -12,6 +12,12 @@ Some tasks take time: driving to a location, rotating to a heading, picking up a
 - How actions are built on topics and services
 - When to use an action
 
+## In Simple Terms
+
+An action is **ordering food delivery**. You place an order (the **goal**), the app keeps you updated: "preparing... on the way... 5 minutes left" (the **feedback**), and finally the food arrives (the **result**). If you change your mind, you can **cancel**. A service would be like waiting silently at the door for 40 minutes with no news.
+
+**Example:** "turtle, turn to face up" is the goal; "45° left to turn" is the feedback; "turned by 90°" is the result.
+
 ---
 
 ## Goal, Feedback, and Result

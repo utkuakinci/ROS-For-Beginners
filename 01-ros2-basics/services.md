@@ -11,6 +11,12 @@ Topics are great for streams of data, but sometimes a node needs to **ask** anot
 - Topics vs services
 - When to use a service
 
+## In Simple Terms
+
+A service is an **information desk**: you walk up, ask one question, wait, and get one answer. There is one desk (the server) and any number of visitors (the clients). Unlike a radio station, nothing happens until someone asks.
+
+**Example:** you ask turtlesim's `/spawn` desk "please create a turtle at (2, 2)", and the answer comes back: "done, its name is turtle2".
+
 ---
 
 ## Servers and Clients

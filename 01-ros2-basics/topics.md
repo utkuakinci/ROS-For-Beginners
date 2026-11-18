@@ -12,6 +12,12 @@
 - Quality of Service (QoS) in brief
 - When to use a topic
 
+## In Simple Terms
+
+A topic is a **radio station**. The publisher broadcasts on a frequency (the topic name), and anyone tuned to that frequency hears it. The broadcaster doesn't know who is listening, and listeners can't talk back. The **message type** is the language of the broadcast: a receiver expecting a different language hears nothing useful.
+
+**Example:** the teleop node broadcasts "drive forward at 2 m/s" on the `/turtle1/cmd_vel` station, in the `Twist` language. The turtle is tuned in and moves. Start `ros2 topic echo` and you have a second radio listening to the same station.
+
 ---
 
 ## Publishers and Subscribers
