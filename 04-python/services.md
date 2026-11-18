@@ -304,10 +304,13 @@ This is the most important rule in this lesson:
 
 Why? With the default executor, callbacks run one at a time in a single thread (see [Subscriber](subscriber.md#how-callbacks-and-spinning-work)). The response arrives as an event that the executor must process, but the executor is busy running *your* callback, which is waiting for that very response. Nothing moves. The node freezes.
 
-```text
- timer_callback() ──▶ waits for response ──▶ the response must be processed by
-        ▲                                     the executor ... which is busy
-        └──────────────── running timer_callback() ◀─────────────────┘
+```mermaid
+flowchart LR
+    A["timer_callback()<br/>waits for the response"] --> B["The response must be<br/>processed by the executor"]
+    B --> C["...which is busy running<br/>timer_callback()"]
+    C --> A
+    style A fill:#f8d7da,stroke:#dc3545
+    style C fill:#f8d7da,stroke:#dc3545
 ```
 
 | Where you call | Use |
