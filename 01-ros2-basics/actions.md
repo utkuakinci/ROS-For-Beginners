@@ -30,14 +30,17 @@ An action interaction has three parts:
 | **Feedback** | Server → Client (repeatedly) | Progress updates: "45° remaining..." |
 | **Result** | Server → Client (once) | The outcome when finished: "rotated by 90°" |
 
-```text
-┌──────────┐ ── goal: {theta: 1.57} ───────────▶ ┌──────────┐
-│  Action  │ ◀─ accepted ─────────────────────── │  Action  │
-│  client  │ ◀─ feedback: {remaining: 1.2} ───── │  server  │
-│          │ ◀─ feedback: {remaining: 0.6} ───── │          │
-│          │ ◀─ feedback: {remaining: 0.1} ───── │          │
-│          │ ◀─ result: {delta: -1.57} ───────── │          │
-└──────────┘                                     └──────────┘
+```mermaid
+sequenceDiagram
+    participant C as Action client
+    participant S as Action server
+    C->>S: goal: theta=1.57
+    S-->>C: accepted
+    S-->>C: feedback: remaining=1.2
+    S-->>C: feedback: remaining=0.6
+    S-->>C: feedback: remaining=0.1
+    S-->>C: result: delta=-1.57
+    Note over C,S: The client may send a cancel request at any time
 ```
 
 At any point the client may send a **cancel** request, and the server stops the task. The server can also **reject** a goal it cannot achieve, or **abort** it if something goes wrong.

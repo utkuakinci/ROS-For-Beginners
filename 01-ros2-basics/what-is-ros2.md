@@ -23,10 +23,14 @@ ROS 2 is a robot's **nervous system**, not its brain. Your phone's operating sys
 
 Even a simple mobile robot has many parts that must work together:
 
-```text
-  LiDAR ──┐                                ┌──▶ Left wheel motor
-  Camera ─┼──▶  Perception ──▶ Planning ──▶ Control ──┤
-  IMU ────┘                                └──▶ Right wheel motor
+```mermaid
+flowchart LR
+    L["LiDAR"] --> P["Perception"]
+    C["Camera"] --> P
+    I["IMU"] --> P
+    P --> PL["Planning"] --> CT["Control"]
+    CT --> LM["Left wheel motor"]
+    CT --> RM["Right wheel motor"]
 ```
 
 Each part needs to exchange data with the others, often at high rates, sometimes across several computers. Without a common framework, every team ends up writing the same plumbing over and over: how to send sensor data between programs, how to start everything together, how to configure it, how to visualize what the robot "sees", and how to record data for debugging.

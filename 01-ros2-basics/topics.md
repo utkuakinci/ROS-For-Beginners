@@ -24,12 +24,9 @@ A topic is a **radio station**. The publisher broadcasts on a frequency (the top
 
 A node that sends data on a topic is a **publisher**; a node that receives it is a **subscriber**. The two never talk to each other directly. They only agree on the topic's **name** and **message type**.
 
-```text
-                         /turtle1/cmd_vel
-┌────────────────┐   geometry_msgs/msg/Twist   ┌────────────────┐
-│ /teleop_turtle │ ──────────────────────────▶ │   /turtlesim   │
-│  (publisher)   │                             │  (subscriber)  │
-└────────────────┘                             └────────────────┘
+```mermaid
+flowchart LR
+    T["/teleop_turtle<br/>(publisher)"] -- "/turtle1/cmd_vel<br/>geometry_msgs/msg/Twist" --> S["/turtlesim<br/>(subscriber)"]
 ```
 
 This **decoupling** is the key idea: the publisher doesn't know or care who is listening (if anyone), and the subscriber doesn't care who is sending. You can add, remove, or replace nodes on either side without changing the others.
@@ -191,13 +188,12 @@ The turtle now drives in circles until you press `Ctrl` + `C`.
 
 A topic can have any number of publishers and subscribers.
 
-```text
-┌────────────┐                        ┌──────────────┐
-│ teleop_key │ ──┐                ┌─▶ │  turtlesim   │
-└────────────┘   │  /turtle1/     │   └──────────────┘
-┌────────────┐   ├─  cmd_vel   ───┤   ┌──────────────┐
-│ topic pub  │ ──┘                └─▶ │ topic echo   │
-└────────────┘                        └──────────────┘
+```mermaid
+flowchart LR
+    K["teleop_key"] --> T(["/turtle1/cmd_vel"])
+    P["topic pub"] --> T
+    T --> S["turtlesim"]
+    T --> E["topic echo"]
 ```
 
 Try it: run the teleop node *and* the `ros2 topic pub --rate 1` command at the same time, while echoing `/turtle1/cmd_vel` in another terminal. Turtlesim receives messages from both publishers.

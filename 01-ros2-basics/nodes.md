@@ -22,10 +22,11 @@ Nodes are like the **cooks in a restaurant kitchen**: one chops, one grills, one
 
 Each node is responsible for a single, well-defined task and communicates with other nodes through topics, services, actions, and parameters. A typical mobile robot might run nodes like these:
 
-```text
-┌──────────────┐   scan    ┌──────────────┐   path    ┌──────────────┐   cmd_vel   ┌──────────────┐
-│ lidar_driver │ ────────▶ │    mapper    │ ────────▶ │   planner    │ ──────────▶ │ motor_driver │
-└──────────────┘           └──────────────┘           └──────────────┘             └──────────────┘
+```mermaid
+flowchart LR
+    LD["lidar_driver"] -- "scan" --> MP["mapper"]
+    MP -- "map" --> PL["planner"]
+    PL -- "cmd_vel" --> MD["motor_driver"]
 ```
 
 Splitting a system into nodes has big advantages:
