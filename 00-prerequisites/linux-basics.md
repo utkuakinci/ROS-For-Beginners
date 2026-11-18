@@ -12,6 +12,12 @@ ROS 2 is developed and run primarily on Ubuntu Linux, and nearly everything you 
 - Environment variables and `~/.bashrc`
 - Working with multiple terminals
 
+## In Simple Terms
+
+Think of the Linux filesystem as a **building**. `/` is the main entrance, `/home/utku` is your own apartment, and `/opt/ros/jazzy` is the room where ROS 2 lives. The terminal is how you walk around: `pwd` asks "which room am I in?", `ls` means "look around", and `cd` means "walk to another room". `sudo` is asking the building manager for the master key, needed only for shared rooms.
+
+**Example:** `cd ~/ros2_ws` means "walk to my robot workshop", and `source /opt/ros/jazzy/setup.bash` means "switch on the lights in this terminal so I can find the ROS 2 tools".
+
 ---
 
 ## The Terminal
