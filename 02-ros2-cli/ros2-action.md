@@ -12,6 +12,12 @@
 - Cancelling goals
 - Troubleshooting
 
+## In Simple Terms
+
+`ros2 action` is a **delivery tracking app** in your terminal. You see which services offer deliveries (`list`, `info`), place an order (`send_goal`), follow its progress (`--feedback`), and cancel it with `Ctrl` + `C`.
+
+**Example:** `ros2 action send_goal --feedback /turtle1/rotate_absolute ...` orders a turn and shows "remaining: 1.2 rad... 0.6 rad... done".
+
 ---
 
 ## Command Overview

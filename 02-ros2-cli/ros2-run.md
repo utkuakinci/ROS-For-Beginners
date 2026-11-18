@@ -13,6 +13,12 @@
 - Running nodes under other tools with `--prefix`
 - Troubleshooting
 
+## In Simple Terms
+
+`ros2 run` **starts one program**, and `--ros-args` are the options you give it at the door: a different name tag (`__node`), a different department (`__ns`), relabeled mailboxes (remapping), and starting settings (`-p`).
+
+**Example:** remapping `/turtle1/cmd_vel:=/cmd_vel` is like putting a new label on a mailbox, so the keyboard node delivers its letters where another robot expects them.
+
 ---
 
 ## Basic Usage

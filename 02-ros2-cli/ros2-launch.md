@@ -13,6 +13,12 @@
 - Reading launch output and logs
 - Stopping a launch
 
+## In Simple Terms
+
+`ros2 launch` is the **"start everything" button**. The launch file is the playlist, and the launch arguments are the choices you make before pressing play, such as "simulation or real robot" or "with or without the camera".
+
+**Example:** `ros2 launch my_robot_gazebo sim.launch.py use_rviz:=false` starts the whole simulation but skips the visualization window.
+
 ---
 
 ## Basic Usage

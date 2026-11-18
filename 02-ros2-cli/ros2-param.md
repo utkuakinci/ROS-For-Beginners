@@ -12,6 +12,12 @@
 - A practical tuning workflow
 - Troubleshooting
 
+## In Simple Terms
+
+`ros2 param` is a **remote control for a node's settings menu**: read a setting (`get`), change it while the node runs (`set`), and save all settings to a file you can load next time (`dump`, `load`).
+
+**Example:** you tune a robot's speed live with `ros2 param set`, and when it feels right, `ros2 param dump` saves the settings so you don't have to remember the numbers.
+
 ---
 
 ## Command Overview
