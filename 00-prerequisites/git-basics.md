@@ -49,9 +49,12 @@ $ git config --global init.defaultBranch main
 
 Every file moves through three areas:
 
-```text
- Working directory  ──git add──▶  Staging area  ──git commit──▶  Repository
- (files you edit)                 (next snapshot)                (history)
+```mermaid
+flowchart LR
+    WD["Working directory<br/>(files you edit)"] -- "git add" --> ST["Staging area<br/>(next snapshot)"]
+    ST -- "git commit" --> RE["Repository<br/>(history)"]
+    RE -- "git push" --> GH[("GitHub")]
+    GH -- "git pull" --> WD
 ```
 
 ---
