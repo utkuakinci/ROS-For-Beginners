@@ -17,6 +17,12 @@ All examples assume the follow demo from [TF2 Listeners](tf2-listener.md#a-launc
 $ ros2 launch my_first_pkg tf_follow.launch.py
 ```
 
+## In Simple Terms
+
+TF2 tools are for when the **family tree** is wrong. `view_frames` prints the whole tree, `tf2_echo` checks one relationship ("how is the laser related to the base?"), and `tf2_monitor` checks who keeps calling late. A missing link splits the family into two separate trees that can't find each other.
+
+**Example:** "frame `odom` does not exist" means a family member never showed up: the node that should publish it isn't running.
+
 ---
 
 ## `view_frames`: Draw the Tree

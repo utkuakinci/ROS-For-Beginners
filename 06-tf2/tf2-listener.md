@@ -12,6 +12,12 @@ A **listener** receives all transforms published in the system and lets you ask 
 - A launch file for the complete follow demo
 - The C++ equivalents
 
+## In Simple Terms
+
+A listener asks TF2 **"where is that, seen from here?"**, like checking a friend's shared location on your phone: "200 m ahead, slightly to the right". You don't need to know where either of you is on the world map; the app works it out.
+
+**Example:** `turtle_follower` asks "where is turtle1 as seen from turtle2?", gets "2 m ahead, 0.3 m right", and steers turtle2 toward it.
+
 ---
 
 ## Buffer and Listener

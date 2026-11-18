@@ -11,6 +11,12 @@ Before using TF2, you need a clear picture of what a coordinate frame is, what a
 - ROS conventions for axes, units, and standard frames
 - A first TF2 demo with turtlesim
 
+## In Simple Terms
+
+"Where is the cup?" has many correct answers: "1 m in front of **me**", "2 m left of **the door**", "at (3, 4) on **the kitchen map**". Each answer uses a different point of view, a **frame**. A **transform** is the directions from one point of view to another, and TF2 is the service that knows how all the points of view relate, at every moment.
+
+**Example:** the laser sees a wall 1.5 m ahead **of the laser**. TF2 converts that into "1.7 m ahead of the robot's center" and "at (5.2, 2.0) on the map".
+
 ---
 
 ## Why Frames?
