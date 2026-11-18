@@ -11,6 +11,12 @@
 - The ROS 2 daemon
 - Asking for help effectively
 
+## In Simple Terms
+
+`ros2 doctor` is a **check-up at the doctor's**: a quick look at the vital signs tells you if something is obviously wrong, and the full report is the lab result you bring to a specialist when you ask for help.
+
+**Example:** "Subscriber without publisher detected on /cmd_vel" is the doctor noticing that a node is waiting for orders that never come.
+
 ---
 
 ## Running a Health Check
