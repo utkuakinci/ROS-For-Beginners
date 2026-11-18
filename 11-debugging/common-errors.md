@@ -14,6 +14,12 @@ Most ROS 2 problems fall into a handful of categories, and the same few causes a
 
 > 💡 Use your browser's search (`Ctrl` + `F`) with a few words from your error message.
 
+## In Simple Terms
+
+This lesson is the **warning-light guide** in a car's manual: find the light that's on (your error message), read what it means (the cause), and what to do about it (the fix).
+
+**Example:** "Package not found" is the "check fuel" light of ROS 2: almost always, the terminal just hasn't sourced the workspace.
+
 ---
 
 ## Environment and Sourcing

@@ -10,6 +10,12 @@ You have seen two programs talk to each other without being told where the other
 - Discovery and `ROS_DOMAIN_ID`
 - Packages and workspaces (a first look)
 
+## In Simple Terms
+
+Picture a robot's software as an **office**. Each employee has one job (a **node**). Some news is pinned on noticeboards for anyone to read (**topics**). Some questions you ask a colleague directly and wait for the answer (**services**). Big jobs are handed over with progress updates, like a parcel you can track (**actions**). Every employee has a settings sheet (**parameters**), and the building's phone and mail system (**DDS**) delivers everything. The `ROS_DOMAIN_ID` is the floor number: people only hear colleagues on their own floor.
+
+**Example:** in turtlesim, the keyboard node pins velocity notes on the `/turtle1/cmd_vel` board, and the turtle node reads them.
+
 ---
 
 ## The Computation Graph

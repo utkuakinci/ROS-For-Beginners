@@ -11,6 +11,12 @@ The URDF from the previous lesson works, but it already shows the problems of pl
 - Arguments and conditional blocks
 - Converting Xacro to URDF
 
+## In Simple Terms
+
+Xacro turns the assembly manual into a **spreadsheet**: put the wheel size in one cell, and every place that uses it updates automatically. A **macro** is a rubber stamp: design the wheel once, stamp it on the left and on the right.
+
+**Example:** changing `wheel_radius` from 0.05 to 0.07 makes the wheels bigger *and* lifts the body and moves the caster, without touching any other line.
+
 ---
 
 ## How Xacro Works

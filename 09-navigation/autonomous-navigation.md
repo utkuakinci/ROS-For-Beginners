@@ -18,6 +18,12 @@ $ ros2 launch my_robot_gazebo sim.launch.py use_rviz:=false
 $ ros2 launch my_robot_navigation navigation.launch.py
 ```
 
+## In Simple Terms
+
+Here the robot gets a **to-do list of places**, like a delivery driver's route for the day. The Simple Commander API is the dispatcher app: "go here, then there; tell me when you arrive or if something goes wrong".
+
+**Example:** `patrol` gives the robot the four corners of the room and lets it drive the round twice, reporting each corner it reaches.
+
 ---
 
 ## Waypoints in RViz2

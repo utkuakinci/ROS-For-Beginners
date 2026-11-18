@@ -11,6 +11,12 @@
 - Calling services, once or repeatedly
 - Troubleshooting service calls
 
+## In Simple Terms
+
+`ros2 service` is a **phone book and a telephone**. `list` shows every number you can call, `type` tells you what the person on the other end expects you to say, and `call` makes the call and shows the answer.
+
+**Example:** `ros2 service call /clear std_srvs/srv/Empty` is phoning turtlesim and saying "please erase the drawing".
+
 ---
 
 ## Command Overview

@@ -11,6 +11,12 @@
 - Hidden nodes
 - Debugging with `ros2 node`
 
+## In Simple Terms
+
+`ros2 node` is the **attendance list and ID cards** of your robot. `list` answers "who is here?", and `info` answers "what does this one do, and who does it talk to?".
+
+**Example:** the turtle doesn't move. `ros2 node list` shows the keyboard node is missing: nobody is sending driving orders.
+
 ---
 
 ## Command Overview

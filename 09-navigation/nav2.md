@@ -12,6 +12,12 @@
 - Your first navigation goal
 - Reading Nav2 in RViz2
 
+## In Simple Terms
+
+Nav2 is a **navigation app in a car**. The **planner** calculates the route on the whole map, the **controller** is the driver steering moment by moment, the **costmap** is the map with "keep away" zones around obstacles, and the **recovery behaviors** are the app saying "recalculating..." when the road is blocked.
+
+**Example:** you click a goal in RViz2; Nav2 draws a path around the box, drives along it, and replans if you drop a new obstacle in the way.
+
 ---
 
 ## Architecture

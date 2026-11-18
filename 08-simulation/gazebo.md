@@ -14,6 +14,12 @@
 - Simulation time
 - Troubleshooting
 
+## In Simple Terms
+
+Gazebo is a **video game world with real physics**, made for robots, like a flight simulator for pilots: you can crash as often as you want, for free. Gazebo and ROS 2 speak different languages, so the **bridge** is an interpreter between them. **Simulation time** is the game clock, which stops when you pause the game.
+
+**Example:** with one bridged topic, a `ros2 topic pub` command drives a vehicle inside the Gazebo world.
+
 ---
 
 ## What a Simulator Does

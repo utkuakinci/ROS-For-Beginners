@@ -11,6 +11,12 @@ Time to put the module together. In this project you finish the simulation setup
 - Recording a simulation run
 - From simulation to a real robot
 
+## In Simple Terms
+
+`scan_avoider` behaves like a **simple robot vacuum**: drive straight until something is close in front, then turn toward the side with more space, and repeat. It never knows the room's layout; it only reacts to what it senses right now.
+
+**Example:** the laser reports a wall 0.5 m ahead, more free space on the left than on the right, so the robot turns left and drives on.
+
 ---
 
 ## The Goal

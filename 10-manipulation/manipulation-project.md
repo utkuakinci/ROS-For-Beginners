@@ -11,6 +11,12 @@ In this project you write `pick_place`, a C++ program that makes the Panda arm p
 - Structuring a manipulation task as a sequence of steps
 - Handling failures
 
+## In Simple Terms
+
+Picking up an object is the same sequence you use for a **cup on a table**: hover your hand above it, lower it, close your fingers, lift, carry, lower, open, and pull back. **Attaching** the object tells MoveIt "the cup is now part of my hand", so it is carried along and doesn't get knocked into things.
+
+**Example:** `pick_place` runs these steps one after another, and stops with a clear message at the step that fails.
+
 ---
 
 ## The Task

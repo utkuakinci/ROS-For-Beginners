@@ -11,6 +11,12 @@ This lesson rewrites the subscribers from [Module 04](../04-python/subscriber.md
 - Throttled logging
 - QoS for subscribers
 
+## In Simple Terms
+
+The same radio receiver, in C++. The difference is that you say **exactly** what kind of envelope arrives, and choose whether to just read the letter (a const reference) or keep the envelope for later (a shared pointer).
+
+**Example:** `wall_bouncer` keeps the latest pose envelope in `pose_` so the control loop can read it later; an empty envelope (`nullptr`) means "no pose received yet".
+
 ---
 
 ## A Minimal Subscriber: `listener`

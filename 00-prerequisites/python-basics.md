@@ -11,6 +11,12 @@ ROS 2 programs written in Python use the `rclpy` library. You do not need to be 
 - Type hints
 - Virtual environments and `pip` (and why ROS 2 mostly avoids them)
 
+## In Simple Terms
+
+A **class** is a cookie cutter; an **object** is a cookie made with it. **Inheritance** is a new recipe based on an old one: a "chocolate chip cookie" is a cookie plus chips. A **callback** is like leaving your phone number at a pizza shop: instead of waiting at the counter, you say "call me when it's ready" and go do other things.
+
+**Example:** every ROS 2 node you write is a class that inherits from `Node` (the basic recipe) and adds its own behavior, and you hand ROS 2 callbacks: "call this function whenever a message arrives".
+
 ---
 
 ## Running Python

@@ -11,6 +11,12 @@ By now you have been opening a new terminal for every node and typing long comma
 - Launch arguments
 - Including other launch files
 
+## In Simple Terms
+
+A launch file is a **conductor's score**. Instead of telling every musician one by one when to start and how loud to play, the conductor uses one sheet that starts the whole orchestra with the right settings. One command, and every node starts with its name, namespace, and parameters.
+
+**Example:** three separate `ros2 run` commands (two turtlesims and a mimic node) become one `ros2 launch` command.
+
 ---
 
 ## Why Launch Files?

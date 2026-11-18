@@ -11,6 +11,12 @@ Hard-coding values like a robot's maximum speed or a sensor's frame name into yo
 - Parameter files (YAML)
 - Parameter types
 
+## In Simple Terms
+
+Parameters are a program's **settings menu**, like the volume and brightness on your phone: you change them without reinstalling the app. Each node has its own settings, and a YAML parameter file is a saved settings profile you can load again later.
+
+**Example:** turtlesim's background color is a parameter. `ros2 param set /turtlesim background_r 255` is like dragging a color slider while the app is running.
+
 ---
 
 ## What Are Parameters?

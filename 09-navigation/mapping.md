@@ -11,6 +11,12 @@ A robot that should navigate needs a map. **SLAM** (Simultaneous Localization an
 - Driving to build a good map
 - Saving the map and understanding the map files
 
+## In Simple Terms
+
+SLAM is like **sketching a map of a dark house with a flashlight**, while also keeping track of where you are on your own sketch. Small mistakes add up, until you come back to a place you recognize ("the front door again!") and fix the whole drawing at once: that's **loop closure**.
+
+**Example:** you drive `my_robot` around the room with the keyboard, the map grows in RViz2, and at the end you save it as an image file.
+
 ---
 
 ## What Is SLAM?

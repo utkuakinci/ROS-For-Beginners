@@ -12,6 +12,12 @@ Many bugs only show up while the robot moves: a scan that looks wrong for half a
 - Reading a bag in Python
 - Visualization tools
 
+## In Simple Terms
+
+rosbag2 is a **dashcam for robots**: it records everything that happens on the topics you choose, so you can replay the moment of the problem as often as you need, without the robot.
+
+**Example:** the robot turned the wrong way at one corner. You replay the recorded laser data and watch your node make the same decision again, this time with extra log messages.
+
 ---
 
 ## Recording

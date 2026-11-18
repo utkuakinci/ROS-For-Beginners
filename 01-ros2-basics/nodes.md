@@ -10,6 +10,12 @@ A **node** is the basic unit of computation in ROS 2: a single program that does
 - Inspecting nodes with `ros2 node list` and `ros2 node info`
 - Node names and namespaces
 
+## In Simple Terms
+
+Nodes are like the **cooks in a restaurant kitchen**: one chops, one grills, one plates. Each has one job, they pass food (data) to each other, and if one goes home sick, the others keep working. You can also replace the grill cook without retraining the whole kitchen. A **namespace** is a second restaurant using the same recipes: `/robot1/cook` and `/robot2/cook` never get mixed up.
+
+**Example:** `turtlesim_node` is the cook who runs the turtle world; `turtle_teleop_key` is the cook who listens to your keyboard and passes on driving orders.
+
 ---
 
 ## What Is a Node?

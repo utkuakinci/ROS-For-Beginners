@@ -12,6 +12,12 @@ Git is a version control system: it records every change you make to your files 
 - Working with remotes (`push`, `pull`)
 - Writing a `.gitignore` for a ROS 2 workspace
 
+## In Simple Terms
+
+Git is a **save-game system** for your project. A **commit** is a save point with a note ("wall bouncer works"). A **branch** is a separate save slot where you can try something risky without losing the working version. **Push** uploads your saves to the cloud (GitHub), and **clone** downloads someone else's project together with all of its save points.
+
+**Example:** before rewriting your robot's controller, you commit. If the rewrite breaks everything, you jump back to the save point instead of starting over.
+
 ---
 
 ## Installing and Configuring Git

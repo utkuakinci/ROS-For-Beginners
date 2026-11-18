@@ -11,6 +11,12 @@ Before writing any code, it helps to understand what ROS 2 actually is, what pro
 - The ROS 2 ecosystem at a glance
 - Running your first ROS 2 programs
 
+## In Simple Terms
+
+ROS 2 is a robot's **nervous system**, not its brain. Your phone's operating system gives every app a standard way to use the camera or send notifications; ROS 2 gives every robot program a standard way to share data with the others, plus a big toolbox of ready-made parts.
+
+**Example:** one team writes the camera program, another writes the motor program. Thanks to ROS 2, the two programs can exchange data without either team knowing how the other one works inside.
+
 ---
 
 ## The Problem ROS Solves

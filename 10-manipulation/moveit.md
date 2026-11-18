@@ -12,6 +12,12 @@
 - Creating a configuration for your own robot: the Setup Assistant
 - Your first MoveIt program in C++
 
+## In Simple Terms
+
+MoveIt is a **GPS for robot arms**. You say "put the hand there", and it works out how every joint must move, finding a route that doesn't hit the table, the robot itself, or anything else it knows about. The **planning scene** is MoveIt's knowledge of the furniture in the room.
+
+**Example:** you drag the gripper marker in RViz2, click Plan, and MoveIt shows a smooth motion of all seven Panda joints to get there.
+
 ---
 
 ## What MoveIt Does

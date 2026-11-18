@@ -13,6 +13,12 @@
 - QoS options on the command line
 - Inspecting message types with `ros2 interface`
 
+## In Simple Terms
+
+`ros2 topic` is a **stethoscope for data**. `list` shows which channels exist, `echo` lets you listen in, `hz` measures how fast the heart beats, and `pub` lets you speak into the channel yourself.
+
+**Example:** a camera should publish 30 images per second. `ros2 topic hz /camera/image_raw` shows 5: you found a performance problem without writing a single line of code.
+
 ---
 
 ## Command Overview

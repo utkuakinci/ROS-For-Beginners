@@ -11,6 +11,12 @@ With a saved map, the robot no longer needs to build the map every time it start
 - Setting the initial pose
 - Important AMCL parameters
 
+## In Simple Terms
+
+Localization is **being dropped somewhere in a city you have a map of**: you look around, compare what you see with the map, and guess where you are. AMCL makes hundreds of guesses at once (**particles**); every time the robot moves and looks again, the guesses that don't match what it sees are thrown away, until only good ones remain.
+
+**Example:** after you mark the robot's start on the map, the cloud of particles shrinks around the true position as the robot drives.
+
 ---
 
 ## Why Not Just Odometry?

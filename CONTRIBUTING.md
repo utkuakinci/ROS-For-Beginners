@@ -80,6 +80,10 @@ Short introduction: what this lesson covers and why it matters.
 - Topic one
 - Topic two
 
+## In Simple Terms
+An everyday analogy for the main idea, followed by a one-line **Example:**
+that connects the analogy to something the reader does in this lesson.
+
 ## <Content sections>
 Explanations, commands, code, and expected output.
 
@@ -93,6 +97,7 @@ A small exercise for the reader.
 
 Guidelines:
 - Write in **English** and keep the tone friendly and beginner-oriented.
+- Keep the **In Simple Terms** section short (one or two paragraphs) and free of jargon: it should make sense to someone who hasn't read the rest of the lesson yet.
 - Show the **expected output** after commands so readers can check their progress.
 - Use fenced code blocks with a language tag (`bash`, `python`, `cpp`, `xml`, `yaml`).
 - Keep the navigation links at the bottom of each page working.

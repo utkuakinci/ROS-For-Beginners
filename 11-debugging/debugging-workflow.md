@@ -13,6 +13,12 @@ Knowing the tools is half the job. The other half is using them in a sensible or
 - A worked example: "the robot doesn't move"
 - Habits that prevent bugs
 
+## In Simple Terms
+
+Debugging is **detective work**: collect the clues before accusing anyone. And like checking why a lamp doesn't light (bulb? cable? socket? fuse?), you test the chain **link by link** until you find the broken one.
+
+**Example:** the robot doesn't move. Is the node running? Yes. Is it publishing commands? No. Does it receive scans? Yes. Does its timer run? No, because `/clock` is missing. Found it.
+
 ---
 
 ## The Process

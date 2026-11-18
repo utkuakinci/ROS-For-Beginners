@@ -12,6 +12,12 @@ In this lesson you put `my_robot` from [Module 07](../07-robot-modeling/README.m
 - A launch file for the whole simulation
 - Driving the robot and checking odometry and TF
 
+## In Simple Terms
+
+Spawning is **placing your toy robot in the game world and plugging in the controller**. The DiffDrive plugin is the motor controller inside the toy, and the bridge is the cable between your joystick (ROS 2) and the toy (Gazebo).
+
+**Example:** `teleop_twist_keyboard` sends "forward" on `/cmd_vel`, the bridge carries it into Gazebo, the plugin turns the wheels, and the robot drives in the world.
+
 ---
 
 ## What Gazebo Needs from a URDF

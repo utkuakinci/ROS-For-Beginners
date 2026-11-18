@@ -12,6 +12,12 @@ A **package** is the unit of organization in ROS 2. Every node, launch file, mes
 - A first look at `ament_cmake` packages and `CMakeLists.txt`
 - Organizing a project into packages
 
+## In Simple Terms
+
+A package is a **labeled box** that holds everything for one feature: the code, the start instructions (launch files), the settings (config files), and a label on the outside (`package.xml`) saying what's inside and what it needs.
+
+**Example:** the `my_first_pkg` box contains the `hello_node` program, a launch file that starts it, and a YAML file with its greeting.
+
 ---
 
 ## What Is a Package?

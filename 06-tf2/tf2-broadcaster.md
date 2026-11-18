@@ -11,6 +11,12 @@ A **broadcaster** publishes transforms into the TF tree. In this lesson you publ
 - Rules for a healthy TF tree
 - The C++ equivalents
 
+## In Simple Terms
+
+A broadcaster **announces where something is**. A static broadcaster is like a sign bolted to the wall: "the camera is mounted 30 cm in front of the center", said once and true forever. A dynamic broadcaster is like **live location sharing**: "the robot is now at (2, 3)... now at (2.1, 3)...".
+
+**Example:** `static_frames` bolts a camera frame onto the turtle once; `turtle_tf_broadcaster` shares the turtle's live position every time it moves.
+
 ---
 
 ## Static Transforms from the Command Line
