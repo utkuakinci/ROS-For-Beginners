@@ -27,6 +27,7 @@
 - [x] `08-simulation` (Jazzy + Gazebo Harmonic)
 - [x] `09-navigation`
 - [x] `10-manipulation`
+- [x] `11-debugging`
 
 ## Code Infrastructure
 - [ ] `src/` directory for buildable example packages
